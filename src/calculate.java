@@ -9,12 +9,11 @@ public class calculate {
         return (a + b) / (a - b);
     }
 
-    public double calculat3(double a, double x, double b) {
-        double ax = a * x;
+    public double calculat3(double n) {
         double result = 1;
 
-        for (double i = ax / b; i > 0; i--) {
-            result *= i;
+        for (double i = 1; i <= n; i++) {
+            result = result * i;
         }
 
         return result;
@@ -36,7 +35,10 @@ public class calculate {
         System.out.print("Введите значение для b: ");
         double b = scanner.nextDouble();
         double y2 = calc.calculat2(a, b);
-        System.out.println("Y2 = " + y2);
+        if((a-b)==0){
+            System.out.println("Ошибка");
+        }
+        else{System.out.println("Y2 = " + y2);}
 
         System.out.print("Выражение (ax/b)!, введите значение для a: ");
         a = scanner.nextDouble();
@@ -44,9 +46,10 @@ public class calculate {
         b = scanner.nextDouble();
         System.out.print("Введите значение для x: ");
         x = scanner.nextDouble();
-        double y3 = calc.calculat3(a, b, x);
-        System.out.println("Y3 = " + y3);
-
+        double y3 = calc.calculat3(a*x/b);
+        if(b==0){
+            System.out.println("Ошибка");
+        }
+        else{System.out.println("Y3 = " + y3);}
     }
 }
-
