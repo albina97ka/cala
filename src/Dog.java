@@ -15,4 +15,7 @@ public class Dog extends Animal {
     public void eat() {
         System.out.println("Собака ест мясо");
     }
+
+    @Override
+    public void sleep() {System.out.println("Собака спит в будке");}
 }
