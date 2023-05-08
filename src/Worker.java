@@ -1,12 +1,10 @@
 public class Worker extends Human {
-    private String position;
-
-    public Worker(String name, String surname, String patronymic, int birthYear, double salary, String position) {
-        super(name, surname, patronymic, birthYear, salary);
-        this.position = position;
+    public Worker(String name, int birthYear, int salary) {
+        super(name, birthYear, salary);
     }
 
-    public void talk() {
-        System.out.println("I am a " + position);
+    @Override
+    public void printInfo() {
+        System.out.println("Работник: " + getName() + " родилась в " + getBirthYear() + " году и имеет зарплату " + getSalary() + " рублей.");
     }
 }

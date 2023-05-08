@@ -1,12 +1,10 @@
 public class Director extends Human {
-    private String company;
-
-    public Director(String name, String surname, String patronymic, int birthYear, double salary, String company) {
-        super(name, surname, patronymic, birthYear, salary);
-        this.company = company;
+    public Director(String name, int birthYear, int salary) {
+        super(name, birthYear, salary);
     }
 
-    public void talk() {
-        System.out.println("I am the director of " + company);
+    @Override
+    public void printInfo() {
+        System.out.println("Директор: " + getName() + " родилась в " + getBirthYear() + " году и имеет зарплату " + getSalary() + " рублей.");
     }
 }
