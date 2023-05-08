@@ -1,73 +1,33 @@
 public class reader {
     private String fullName;
-    private int cardNumber;
+    private int ticketNumber;
     private String faculty;
-    private String dateOfBirth;
+    private String birthDate;
     private String phoneNumber;
 
-    public reader(String fullName, int cardNumber, String faculty, String dateOfBirth, String phoneNumber) {
+    public reader(String fullName, int ticketNumber, String faculty, String birthDate, String phoneNumber) {
         this.fullName = fullName;
-        this.cardNumber = cardNumber;
+        this.ticketNumber = ticketNumber;
         this.faculty = faculty;
-        this.dateOfBirth = dateOfBirth;
+        this.birthDate = birthDate;
         this.phoneNumber = phoneNumber;
     }
 
-    public String getFullName() {
-        return fullName;
+    public void takeBook(int booksCount) {
+        System.out.println(fullName + " взял " + booksCount + " книги.");
     }
 
-    public void setFullName(String fullName) {
-        this.fullName = fullName;
+    public void takeBook(String... bookNames) {
+        String booksStr = String.join(", ", bookNames);
+        System.out.println(fullName + " взял книги: " + booksStr);
     }
 
-    public int getCardNumber() {
-        return cardNumber;
+    public void returnBook(int booksCount) {
+        System.out.println(fullName + " вернул " + booksCount + " книги.");
     }
 
-    public void setCardNumber(int cardNumber) {
-        this.cardNumber = cardNumber;
-    }
-
-    public String getFaculty() {
-        return faculty;
-    }
-
-    public void setFaculty(String faculty) {
-        this.faculty = faculty;
-    }
-
-    public String getDateOfBirth() {
-        return dateOfBirth;
-    }
-
-    public void setDateOfBirth(String dateOfBirth) {
-        this.dateOfBirth = dateOfBirth;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    public void takeBook(int numberOfBooks) {
-        System.out.println(this.fullName + " взял " + numberOfBooks + " книги.");
-    }
-
-    public void takeBook(String... bookTitles) {
-        String bookList = String.join(", ", bookTitles);
-        System.out.println(this.fullName + " взял книги: " + bookList);
-    }
-
-    public void returnBook(int numberOfBooks) {
-        System.out.println(this.fullName + " вернул " + numberOfBooks + " книги.");
-    }
-
-    public void returnBook(String... bookTitles) {
-        String bookList = String.join(", ", bookTitles);
-        System.out.println(this.fullName + " вернул книги: " + bookList);
+    public void returnBook(String... bookNames) {
+        String booksStr = String.join(", ", bookNames);
+        System.out.println(fullName + " вернул книги: " + booksStr);
     }
 }
