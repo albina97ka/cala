@@ -20,7 +20,7 @@ public class calculate {
         if (b != 0) {
             double n = 1;
             for (int i = 1; i <= x; i++) {
-                n *= a * i / b;
+                n = n * (a * i / b);
             }
             result = n;
         } else {System.out.println("Error");}
